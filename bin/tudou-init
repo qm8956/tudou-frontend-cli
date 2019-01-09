@@ -1,0 +1,95 @@
+#!/usr/bin/env node
+
+const download = require('download-git-repo')
+const program = require('commander')
+const chalk = require('chalk')
+const exists = require('fs').existsSync
+const inquirer = require('inquirer')
+const rm = require('rimraf').sync
+
+/**
+ * Usage.
+ */
+program
+  .usage('<branch> [project-name]')
+  .option('branch', '选择需要下载得分支，可使用"tudou list"查看所有分支')
+  .option('project-name', '要创建得项目名')
+
+/**
+ * Help.
+ */
+program.on('--help', () => {
+  console.log('  Examples:')
+  console.log()
+  console.log(chalk.gray('    # 根据输入的分支创建一个新的基础工程'))
+  console.log('    $ tudou init master web-project')
+  console.log()
+  console.log(chalk.gray('    # 可以使用命令查看所有分支'))
+  console.log('    $ tudou list')
+  console.log()
+})
+
+/**
+ * Help.
+ */
+
+function help () {
+  program.parse(process.argv)
+  if (program.args.length < 1) return program.help()
+}
+help()
+
+let branch = program.args[0] || 'master'
+let projectName = program.args[1] || 'frontend'
+
+// function askQuestions (prompts) {
+//   return (files, metalsmith, done) => {
+//     ask(prompts, metalsmith.metadata(), done)
+//   }
+// }
+
+if (exists(projectName)) {
+  inquirer.prompt([{
+    type: 'confirm',
+    message: projectName + '文件夹已经存在，是否删除后继续下载(不输默认继续)',
+    name: 'ok'
+  }]).then(answers => {
+    if (answers.ok) {
+      downloadAndGenerate(branch, projectName)
+    } else {
+      console.log(chalk.blue('\n取消下载，程序终止\n'))
+    }
+  }).catch(function (err) {
+    console.log(chalk.red(err))
+  })
+} else {
+  downloadAndGenerate(branch, projectName)
+}
+
+function downloadAndGenerate (branch, project) {
+  if (exists(project)) {
+    rm(project)
+  }
+  console.log(chalk.yellow(
+    '\n' +
+    '创建并下载文件 \n' +
+    '正在拉取模板代码，下载位置：https://github.com/qm8956/tudou-frontend-cli/ ...' +
+    '\n'
+  ))
+  download('direct:https://github.com/qm8956/tudou-frontend-cli.git#' + branch, project, { clone: true }, function (err) {
+    if (err) {
+      console.log(chalk.red('Error😭!\n' + err))
+    } else {
+      console.log(chalk.green(
+        '\n' +
+        'Success😀\n' +
+        '模板工程建立完成\n' +
+        'cd ' + projectName + '\n' +
+        'npm install\n' +
+        'npm run dev\n'
+      ))
+    }
+  })
+}
+
+program.parse(process.argv)

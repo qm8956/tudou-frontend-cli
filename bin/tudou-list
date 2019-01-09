@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+const chalk = require('chalk')
+
+console.log(chalk.blue(
+  '\n' +
+  '      client  - 客户端基础模板工程\n' +
+  '      manager - 管理端基础模板工程\n' +
+  '      wap     - 针对移动端基础模板工程\n' +
+  '      pwa     - pwa基础模板工程\n'
+))

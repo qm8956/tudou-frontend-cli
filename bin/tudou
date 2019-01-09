@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+const program = require('commander')
+
+program
+  .version(require('../package').version)
+  .usage('<command> [options]')
+  .command('init', '根据选择的分支下载对应的基础工程')
+  .command('list', '查看所有可用的分支')
+  // .command('build', 'prototype a new project')
+  // .command('create', '(for v3 warning only)')
+
+program.parse(process.argv)

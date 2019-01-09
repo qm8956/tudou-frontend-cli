@@ -1,0 +1,36 @@
+{
+  "name": "tudou-frontend-cli",
+  "version": "0.0.5",
+  "description": "foundation model in tudou",
+  "dependencies": {
+    "async": "^2.6.1",
+    "chalk": "^2.4.2",
+    "commander": "^2.19.0",
+    "download-git-repo": "^1.1.0",
+    "inquirer": "^6.2.1",
+    "shelljs": "^0.8.3",
+    "tracer": "^0.9.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "tudou": "bin/tudou",
+    "tudou-init": "bin/tudou-init",
+    "tudou-list": "bin/tudou-list"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qm8956/tudou-frontend-cli.git"
+  },
+  "keywords": [
+    "cli"
+  ],
+  "author": "qm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qm8956/tudou-frontend-cli/issues"
+  },
+  "homepage": "https://github.com/qm8956/tudou-frontend-cli#readme"
+}
