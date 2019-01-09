@@ -1,6 +1,6 @@
 {
   "name": "tudou-frontend-cli",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "foundation model in tudou",
   "dependencies": {
     "async": "^2.6.1",
