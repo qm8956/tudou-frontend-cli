@@ -8,8 +8,6 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-
-
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
@@ -26,7 +24,7 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
+      '@': resolve('src')
     }
   },
   module: {
@@ -66,6 +64,15 @@ module.exports = {
         }
       }
     ]
+  },
+  // 打包优化，将使用js引用cdn加速
+  externals: {
+    'vue': 'Vue',
+    'vue-router': 'VueRouter',
+    'vuex': 'Vuex',
+    'element-ui': 'ELEMENT',
+    'axios': 'axios',
+    'ali-oss': 'OSS'
   },
   node: {
     // prevent webpack from injecting useless setImmediate polyfill because Vue
