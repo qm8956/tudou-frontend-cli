@@ -7,6 +7,9 @@
 
 ### 额外引入的模块
 
+0. bootstrap.scss源文件
+  - 直接考本源文件到项目目录中
+
 1. 处理scss样式文件
   ``` bash
     $ npm install sass-loader node-sass --save-dev
@@ -38,4 +41,8 @@
 8. vue官方状态管理模块
   ``` bash
     $ npm i vuex
+  ```
+9. 图片预览模块
+  ``` bash
+    $ npm install v-viewer
   ```

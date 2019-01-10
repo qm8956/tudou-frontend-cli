@@ -9,6 +9,10 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
 
 // 自己扩充的全局样式
+.main-width {
+  width: 1260px;
+}
+
 @mixin zoomImage {
   width:100%;
   height:0;

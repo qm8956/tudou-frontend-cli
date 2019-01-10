@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store'
 
 // 引入bootstrap scss源码文件
 import './bootstrap-scss/bootstrap.scss'
@@ -20,6 +21,8 @@ import paramsConvert from './plugins/paramsConvert'
 import Utils from './plugins/Utils'
 // 图片懒加载
 import VueLazyload from 'vue-lazyload'
+// 图片点击预览插件
+import './plugins/imgViewer'
 
 Vue.config.productionTip = false
 
@@ -37,8 +40,29 @@ Vue.use(VueLazyload, {
   listenEvents: [ 'scroll' ]
 })
 
+// 功能未开通提示
+Vue.component('promp', (resolve) => { require(['./components/common/Promp'], resolve) })
+// 时间轴组件
+Vue.component('timeline-item', (resolve) => { require(['./components/common/TimeLineItem'], resolve) })
+Vue.component('time-line', (resolve) => { require(['./components/common/TimeLine'], resolve) })
+// 返回顶部
+Vue.component('back-top', (resolve) => { require(['./components/common/BackTop'], resolve) })
+// 城市级联
+Vue.component('city-cascader', (resolve) => { require(['./components/common/CtiyCascader'], resolve) })
+// 富文本编辑器
+// Vue.component('text-edit', (resolve) => { require(['./components/common/TextEdit'], resolve) })
+// 文件上传
+Vue.component('file-upload', (resolve) => { require(['./components/common/FileUpload'], resolve) })
+
 // 导航守卫，可以做一下刷新后的处理
 router.beforeEach(function (to, from, next) {
+  if (to.path === '/') {
+    next({
+      replace: true,
+      name: 'first-content'
+    })
+    return
+  }
   next()
 })
 
@@ -46,6 +70,7 @@ router.beforeEach(function (to, from, next) {
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
