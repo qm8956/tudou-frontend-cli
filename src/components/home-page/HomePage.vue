@@ -132,6 +132,12 @@ export default {
       headers: headerRouter
     }
   },
+  mounted () {
+    if (window.performance) {
+      var timeSincePageLoad = Math.round(performance.now())
+      console.log('总计耗时：', timeSincePageLoad)
+     }
+  },
   methods: {
     // 切换不同的内容
     handleSelect(key, keyPath) {

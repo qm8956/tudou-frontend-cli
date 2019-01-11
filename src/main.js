@@ -23,6 +23,8 @@ import Utils from './plugins/Utils'
 import VueLazyload from 'vue-lazyload'
 // 图片点击预览插件
 import './plugins/imgViewer'
+// 错误处理(针对项目的，可能需要自己修改)
+import errorPage from './plugins/errorPage'
 
 Vue.config.productionTip = false
 
@@ -39,6 +41,7 @@ Vue.use(VueLazyload, {
   // the default is ['scroll', 'wheel', 'mousewheel', 'resize', 'animationend', 'transitionend']
   listenEvents: [ 'scroll' ]
 })
+Vue.use(errorPage)
 
 // 功能未开通提示
 Vue.component('promp', (resolve) => { require(['./components/common/Promp'], resolve) })
@@ -49,7 +52,7 @@ Vue.component('time-line', (resolve) => { require(['./components/common/TimeLine
 Vue.component('back-top', (resolve) => { require(['./components/common/BackTop'], resolve) })
 // 城市级联
 Vue.component('city-cascader', (resolve) => { require(['./components/common/CtiyCascader'], resolve) })
-// 富文本编辑器
+// 富文本编辑器(由于文件太大，暂时没有引入)
 // Vue.component('text-edit', (resolve) => { require(['./components/common/TextEdit'], resolve) })
 // 文件上传
 Vue.component('file-upload', (resolve) => { require(['./components/common/FileUpload'], resolve) })
