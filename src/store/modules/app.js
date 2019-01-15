@@ -37,11 +37,11 @@ const app = {
       state.tagsList.push(...list)
     },
     updateMenulist (state) {
-      // let accessCode = parseInt(Cookies.get('access'))
+      let accessCode = parseInt(localStorage.get('access'))
       let menuList = []
       appRouter.forEach((item, index) => {
         if (item.access !== undefined) {
-          // if (Util.showThisRoute(item.access, accessCode)) {
+          if (Util.showThisRoute(item.access, accessCode)) {
           if (item.children.length === 1) {
             menuList.push(item)
           } else {
@@ -58,7 +58,7 @@ const app = {
             })
             menuList[len - 1].children = childrenArr
           }
-          // }
+          }
         } else {
           if (item.children.length === 1) {
             menuList.push(item)
@@ -67,9 +67,9 @@ const app = {
             let childrenArr = []
             childrenArr = item.children.filter(child => {
               if (child.access !== undefined) {
-                // if (Util.showThisRoute(child.access, accessCode)) {
-                //   return child
-                // }
+                if (Util.showThisRoute(child.access, accessCode)) {
+                  return child
+                }
               } else {
                 return child
               }

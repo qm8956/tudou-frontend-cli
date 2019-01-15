@@ -13,15 +13,15 @@
       </el-tabs>
     </div>
     <div class="">
-        <el-dropdown @command="clearTags">
-         <span class="el-dropdown-link">
-           标签选项<i class="el-icon-arrow-down el-icon--right"></i>
-         </span>
-         <el-dropdown-menu slot="dropdown">
-           <el-dropdown-item command="clearOthers">关闭其他</el-dropdown-item>
-           <el-dropdown-item command="clearAll">全部关闭</el-dropdown-item>
-         </el-dropdown-menu>
-       </el-dropdown>
+      <el-dropdown @command="clearTags">
+        <span class="el-dropdown-link">
+          标签选项<i class="el-icon-arrow-down el-icon--right"></i>
+        </span>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item command="clearOthers">关闭其他</el-dropdown-item>
+          <el-dropdown-item command="clearAll">全部关闭</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
     </div>
   </div>
 </template>

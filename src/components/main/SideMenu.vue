@@ -1,6 +1,6 @@
 <template>
   <el-menu :default-active="$route.name" class="el-menu-vertical" data-simplebar @open="handleOpen" @close="handleClose" @select="handSelected" :collapse="isCollapse">
-    <template v-for="(menu, index) in menuList" >
+    <template v-for="menu in menuList" >
       <!-- 只有一个的菜单 -->
       <el-menu-item :index="menu.children[0].name"  v-if="menu.children.length <= 1">
         <i :class="menu.icon"></i>
@@ -12,7 +12,7 @@
           <i :class="menu.icon"></i>
           <span slot="title" v-show="!isCollapse">{{menu.title}}</span>
         </template>
-        <el-menu-item :index="i.name"  v-for="(i, cIndex) in menu.children" :key="i.name">
+        <el-menu-item :index="i.name"  v-for="i in menu.children" :key="i.name">
           <i :class="i.icon"></i>
           <span slot="title">{{i.title}}</span>
         </el-menu-item>
