@@ -1,0 +1,124 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?l3ho3h');
+  src:  url('fonts/icomoon.eot?l3ho3h#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?l3ho3h') format('truetype'),
+    url('fonts/icomoon.woff?l3ho3h') format('woff'),
+    url('fonts/icomoon.svg?l3ho3h#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-chang-ps:before {
+  content: "\e900";
+}
+.icon-connection:before {
+  content: "\e901";
+}
+.icon-edit:before {
+  content: "\e902";
+}
+.icon-form:before {
+  content: "\e903";
+}
+.icon-home:before {
+  content: "\e904";
+}
+.icon-like:before {
+  content: "\e905";
+}
+.icon-line-data .path1:before {
+  content: "\e906";
+  color: rgb(129, 146, 146);
+}
+.icon-line-data .path2:before {
+  content: "\e907";
+  margin-left: -1em;
+  color: rgb(215, 57, 73);
+}
+.icon-line-data .path3:before {
+  content: "\e908";
+  margin-left: -1em;
+  color: rgb(21, 154, 141);
+}
+.icon-list:before {
+  content: "\e909";
+}
+.icon-lock:before {
+  content: "\e90a";
+}
+.icon-look:before {
+  content: "\e90b";
+}
+.icon-map:before {
+  content: "\e90c";
+}
+.icon-mark:before {
+  content: "\e90d";
+}
+.icon-markdown:before {
+  content: "\e90e";
+}
+.icon-menu:before {
+  content: "\e90f";
+}
+.icon-message:before {
+  content: "\e910";
+}
+.icon-money:before {
+  content: "\e911";
+}
+.icon-person:before {
+  content: "\e912";
+}
+.icon-person-info:before {
+  content: "\e913";
+}
+.icon-pie-data:before {
+  content: "\e914";
+}
+.icon-qr-code:before {
+  content: "\e915";
+}
+.icon-quit-sreensvg:before {
+  content: "\e916";
+}
+.icon-safe:before {
+  content: "\e917";
+}
+.icon-search:before {
+  content: "\e918";
+}
+.icon-solid-like:before {
+  content: "\e919";
+}
+.icon-sound:before {
+  content: "\e91a";
+}
+.icon-sreen:before {
+  content: "\e91b";
+}
+.icon-start:before {
+  content: "\e91c";
+}
+.icon-text-edit:before {
+  content: "\e91d";
+}
+.icon-time:before {
+  content: "\e91e";
+}

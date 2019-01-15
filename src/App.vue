@@ -1,23 +1,21 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <router-view/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  mounted () {
+    window.onresize = this.reHeight
+    this.reHeight()
+  },
+  methods: {
+    reHeight () {
+      let he = document.documentElement.clientHeight
+      this.$store.dispatch('increment', he - 60 - 32 - 43)
+    }
+  }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
