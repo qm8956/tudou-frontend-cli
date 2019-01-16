@@ -26,18 +26,18 @@
           color="transparent"
         >
         <v-btn flat color="teal">
-          <span>Recents</span>
-          <v-icon>history</v-icon>
+          <span>首页</span>
+          <v-icon>import_contacts</v-icon>
         </v-btn>
 
         <v-btn flat color="teal">
-          <span>Favorites</span>
-          <v-icon>favorite</v-icon>
+          <span>动态</span>
+          <v-icon>mode_comment</v-icon>
         </v-btn>
 
         <v-btn flat color="teal">
-          <span>Nearby</span>
-          <v-icon>place</v-icon>
+          <span>我的</span>
+          <v-icon>account_circle</v-icon>
         </v-btn>
       </v-bottom-nav>
     </v-layout>

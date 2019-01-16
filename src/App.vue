@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app :dark="isLight">
     <router-view/>
     <v-card id="create">
       <v-speed-dial
@@ -27,9 +27,10 @@
           fab
           dark
           small
-          color="green"
+          :color="isLight ? 'grey' : 'green'"
+          @click="changeLighte"
         >
-          <v-icon>wb_sunny</v-icon>
+          <v-icon>{{ isLight ? 'stars' : 'wb_sunny' }}</v-icon>
         </v-btn>
         <v-btn
           fab
@@ -66,7 +67,13 @@ export default {
       right: true,
       bottom: true,
       left: false,
-      transition: 'slide-y-reverse-transition'
+      transition: 'slide-y-reverse-transition',
+      isLight: true
+    }
+  },
+  methods: {
+    changeLighte () {
+      this.isLight = !this.isLight
     }
   },
   computed: {
