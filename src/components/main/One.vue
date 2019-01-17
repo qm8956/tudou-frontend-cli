@@ -1,5 +1,5 @@
 <template>
-  <v-container style="background: #90CAF9;">
+  <v-container style="background: #90CAF9;" class="fluid">
     <p>123</p>
     <p>456</p>
     <p>789</p>

@@ -1,5 +1,5 @@
 <template>
-  <v-container style="background: #4DB6AC;">
+  <v-container style="background: #4DB6AC;"  class="ma-0">
     2
   </v-container>
 </template>

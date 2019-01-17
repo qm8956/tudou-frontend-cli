@@ -1,7 +1,7 @@
 <template>
   <v-app :dark="isLight">
     <router-view/>
-    <v-card id="create">
+    <!-- <v-card id="create"> -->
       <v-speed-dial
         v-model="fab"
         :top="top"
@@ -11,6 +11,7 @@
         :direction="direction"
         :open-on-hover="hover"
         :transition="transition"
+        fixed
         style="bottom: 86px;"
       >
         <v-btn
@@ -49,7 +50,7 @@
           <v-icon>delete</v-icon>
         </v-btn>
       </v-speed-dial>
-    </v-card>
+    <!-- </v-card> -->
   </v-app>
 </template>
 

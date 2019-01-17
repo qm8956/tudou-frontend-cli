@@ -2,28 +2,31 @@
   <v-container fluid class="pa-0">
     <v-layout column fill-height>
       <nav-header ref="header"></nav-header>
-        <v-window 
-          v-model="activeBtn" 
-          class="nav-menu-body"
-          :touch="{
-            left: () => swipe('left'),
-            right: () => swipe('right'),
-          }">
-            <v-window-item>
-              <one></one>
-            </v-window-item>
-            <v-window-item>
-              <two></two>
-            </v-window-item>
-            <v-window-item>
-              <three></three>
-            </v-window-item>
-          </v-window>
+        <v-content class="nav-menu-body">
+          <v-window 
+            v-model="activeBtn"
+            class="fill-height"
+            :touch="{
+              left: () => swipe('left'),
+              right: () => swipe('right'),
+            }">
+              <v-window-item>
+                <one></one>
+              </v-window-item>
+              <v-window-item>
+                <two></two>
+              </v-window-item>
+              <v-window-item>
+                <three></three>
+              </v-window-item>
+            </v-window>
+          </v-content>
         <v-bottom-nav
           :active.sync="activeBtn"
           :value="showNav"
           absolute
           color="transparent"
+          class="hidden-lg-and-up"
         >
         <v-btn flat color="teal">
           <span>首页</span>
@@ -94,4 +97,10 @@ export default {
     margin-bottom: 56px;
     overflow-y: auto;
   }
+  @media only screen and (min-width: 1264px) {
+    .nav-menu-body {
+      margin-bottom: 0px;
+    }
+  }
+  
 </style>

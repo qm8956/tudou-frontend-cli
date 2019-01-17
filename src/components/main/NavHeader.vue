@@ -1,7 +1,11 @@
 <template>
   <div>
-    <v-toolbar color="cyan" dark tabs>
-      <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
+    <v-toolbar color="cyan" dark tabs 
+      dense
+      fixed
+      clipped-left
+      app>
+      <v-toolbar-side-icon @click="drawer = !drawer" class="hidden-lg-and-up"></v-toolbar-side-icon>
       <v-toolbar-title>Page title</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn icon>
@@ -14,8 +18,9 @@
     <!-- 侧边栏 -->
     <v-navigation-drawer
       v-model="drawer"
-      absolute
-      temporary
+      fixed
+      clipped
+      app
     >
       <v-list class="pa-1">
         <v-list-tile avatar>
@@ -76,7 +81,7 @@ export default {
   title: '导航顶部',
   data() {
     return {
-      drawer: false,
+      drawer: true,
       items: [
         { title: 'Home', icon: 'dashboard' },
         { title: 'lalala', icon: 'question_answer' },
