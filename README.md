@@ -1,7 +1,7 @@
 # vuetify-wap
 
 ## docker说明
-[docker相关.md](doc/docker相关说明.md)
+[docker相关.md](doc/docker相关.md)
 
 ## Project setup
 ```
