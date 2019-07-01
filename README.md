@@ -1,4 +1,4 @@
-# tudou-client
+# 客户端相关模板
 
 > 客户端基础模板工程，项目基本框架基于vuejs + element-ui + vuex + vue-router构成，其余项目中使用模块，参考模块列表
 

@@ -14,9 +14,9 @@
       <div class="row">
         <div class="col-lg-4" v-for="n in 3" :key="n">
           <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+          <h2>标题文字</h2>
+          <p>一堆废话的内容</p>
+          <p><a class="btn btn-secondary" href="#" role="button">详情按钮 &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
@@ -26,8 +26,8 @@
       <div v-for="n in 2" :key="n">
         <div class="row featurette">
           <div class="col-md-7">
-            <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <h2 class="featurette-heading">{{n}}部分内容 <span class="text-muted">保持冷静.</span></h2>
+            <p class="lead">说说你是怎么保持冷静的</p>
           </div>
           <div class="col-md-5">
             <img class="featurette-image img-fluid mx-auto" src="static/temp/home-1.svg" alt="Generic placeholder image">
@@ -38,8 +38,8 @@
 
         <div class="row featurette">
           <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <h2 class="featurette-heading">{{n}}部分内容 <span class="text-muted">保持冷静</span></h2>
+            <p class="lead">说说你是怎么保持冷静的</p>
           </div>
           <div class="col-md-5 order-md-1">
             <img class="featurette-image img-fluid mx-auto" src="static/temp/home-1.svg" alt="Generic placeholder image">
@@ -60,7 +60,8 @@ export default {
     return {
       banners: [
         {bannerUrl: 'static/temp/banner1.jpg', sort: '1'},
-        {bannerUrl: 'static/temp/banner2.jpg', sort: '2'}
+        {bannerUrl: 'static/temp/banner2.jpg', sort: '2'},
+        {bannerUrl: 'static/temp/banner3.jpg', sort: '3'}
       ],
     }
   }
